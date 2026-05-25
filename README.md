@@ -60,13 +60,13 @@ Web_hotel/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/DuDu21cs/wweb_hotel.git
+git clone https://github.com/DuDu21cs/web_hotel.git
 ```
 
 2. Open the project folder:
 
 ```bash
-cd hotel-website
+cd web_hotel
 ```
 
 3. Run the project:
