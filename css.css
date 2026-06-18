@@ -1,0 +1,573 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex_space {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.primary-btn {
+  padding: 15px 40px;
+  background: #7fc142;
+  font-weight: bold;
+  color: white;
+}
+
+.container {
+  max-width: 85%;
+  margin: auto;
+}
+
+/* ── HEADER ── */
+header {
+  height: 10vh;
+  line-height: 10vh;
+  padding: 0 20px;
+  position: relative;
+}
+
+header img {
+  margin: 20px 0;
+}
+
+header ul {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+}
+
+header ul li {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+header ul li a {
+  color: #333;
+  margin: 0 10px;
+  transition: 0.5s;
+}
+
+header ul li a:hover {
+  color: #7fc142;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+header button {
+  padding: 13px 40px;
+}
+
+header .links span {
+  display: none;
+}
+
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  color: black;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.hero a {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #7fc142;
+  font-weight: bold;
+  color: white;
+}
+
+/* ── SERVICES ── */
+.service {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.service img {
+  width: 400px;
+  height: auto;
+}
+
+.service-des {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 20px 40px;
+}
+
+#p3 {
+  margin-left: 50px;
+}
+
+/* ── MAP ── */
+.map {
+  padding: 40px;
+  margin-top: 60px;
+}
+
+.map h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 15px 40px;
+}
+
+.map p {
+  text-align: center;
+  color: green;
+  padding: 10px 40px;
+}
+
+/* ── ROOMS ── */
+.room {
+  margin-bottom: 20px;
+  padding: 40px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: lightcyan;
+}
+
+.room img {
+  max-width: 400px;
+  height: auto;
+}
+
+.room h2 {
+  color: darkred;
+}
+
+.room p {
+  color: black;
+}
+
+.room button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: lawngreen;
+  border-radius: 4px;
+}
+
+/* ── RESTAURANT ── */
+.restaurant {
+  margin-bottom: 20px;
+  padding: 40px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+
+.restaurant h2 {
+  align-self: flex-start;
+}
+
+.image-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.image-container::-webkit-scrollbar {
+  height: 0;
+}
+
+.image-container::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.images {
+  display: flex;
+}
+
+.restaurant img {
+  max-width: 400px;
+  margin-right: 10px;
+}
+
+.next-button {
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.reserve-button {
+  padding: 15px 30px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.reserve-button:hover {
+  background-color: #388e3c;
+}
+
+/* ── NEWS ── */
+.news-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article {
+  margin-bottom: 20px;
+}
+
+.article h2 {
+  color: #333;
+}
+
+.article p {
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.news-container img {
+  max-width: 700px;
+  margin-right: 10px;
+}
+
+/* ── ABOUT ── */
+#about {
+  padding: 40px 0;
+  background-color: #f8f8f8;
+}
+
+#about .container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#about h2, #about h3 {
+  color: #333;
+}
+
+#about ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#about ul li {
+  margin-bottom: 10px;
+}
+
+/* ── BOOKING PAGE ── */
+#booking-page .container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  background: linear-gradient(45deg, #3498db, #1abc9c);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#booking-page h1 {
+  text-align: center;
+  color: black;
+}
+
+#booking-page label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+#booking-page input,
+#booking-page textarea,
+#booking-page select {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#booking-page button {
+  padding: 15px;
+  background: darkturquoise;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 150px;
+  font-size: 18px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+#booking-page button:hover {
+  background: #0097a7;
+}
+
+#booking-page img {
+  max-width: 180px;
+  margin-right: 10px;
+}
+
+.bookk {
+  display: block;
+  margin: 20px auto 0;
+  padding: 15px 40px;
+  background-color: #e53935;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bookk:hover {
+  background-color: #b71c1c;
+}
+
+/* ── RESERVATION FORM ── */
+#header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+#reservation-form {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: skyblue;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#reservation-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+#reservation-form label {
+  margin-bottom: 8px;
+}
+
+#reservation-form input,
+#reservation-form select {
+  padding: 10px;
+  margin-bottom: 16px;
+}
+
+#reservation-form input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  background-color: lightcyan;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.footer p {
+  color: black;
+}
+
+.footer h3 {
+  color: darkkhaki;
+}
+
+.footer a {
+  color: darkkhaki;
+}
+
+.footer-section {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.copyright {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* ── IMAGES ── */
+#images {
+  position: relative;
+}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  header ul {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  header ul.open {
+    display: flex;
+  }
+
+  header ul li {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  header .links span {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .service {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service img {
+    width: 100%;
+  }
+
+  .service-des {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .room {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .room img {
+    max-width: 100%;
+  }
+
+  .room button {
+    left: 0;
+  }
+
+  .restaurant img {
+    max-width: 100%;
+  }
+
+  .news-container img {
+    max-width: 100%;
+  }
+
+  .map h1 {
+    text-align: center;
+    left: 0;
+  }
+
+  .map p {
+    left: 0;
+    text-align: center;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}

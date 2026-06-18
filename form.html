@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css.css">
+  <title>Booking Page</title>
+  <style>
+    .room {
+      position: relative;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .room.selected {
+      border: 2px solid #4CAF50;
+      box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+      background-color: #e8f5e9;
+    }
+
+    .selbtn {
+      display: block;
+      margin: 10px 0 20px 40px;
+      padding: 10px 30px;
+      background-color: lawngreen;
+      color: #333;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .selbtn.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .bed-choice {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .bed-choice.visible {
+      display: block;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      padding: 12px 30px;
+      background-color: darkturquoise;
+      color: white;
+      border-radius: 5px;
+      width: fit-content;
+      font-size: 16px;
+    }
+
+    .back-home:hover {
+      background-color: #0097a7;
+    }
+  </style>
+</head>
+
+<body id="booking-page">
+
+  <div class="container">
+    <h1>Book Your Stay</h1>
+
+    <form id="bookingForm" onsubmit="handleBooking(event)">
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="check-in">Check-In Date:</label>
+        <input type="date" id="check-in" name="check-in" required>
+      </div>
+
+      <div class="form-group">
+        <label for="check-out">Check-Out Date:</label>
+        <input type="date" id="check-out" name="check-out" required>
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+      </div>
+
+      <!-- Hidden input to track which room was selected -->
+      <input type="hidden" id="selectedRoom" name="selectedRoom" value="">
+
+      <h2 style="margin: 20px 0 10px; color: #333;">Select a Room</h2>
+
+      <!-- Standard Room -->
+      <div class="room" id="room1">
+        <img src="image/room1.jpg" alt="Standard Room">
+        <div>
+          <h2>Standard Room</h2>
+          <p>Comfortable room with essential amenities for a pleasant stay.</p>
+          <p>Price: $100 per night</p>
+          <div class="bed-choice" id="bedDiv1">
+            <label for="bedChoice1">Bed Choice:</label>
+            <select id="bedChoice1" name="bedChoice1">
+              <option value="single">Single Bed</option>
+              <option value="double">Double Bed</option>
+              <option value="king">King Bed</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="selbtn" id="btn1" onclick="selectRoom('room1', 'btn1', 'bedDiv1', 'Standard Room')">Select Room</button>
+
+      <!-- Deluxe Room -->
+      <div class="room" id="room2">
+        <img src="image/room2.jpg" alt="Deluxe Room">
+        <div>
+          <h2>Deluxe Room</h2>
+          <p>Luxurious room with additional features and a beautiful view.</p>
+          <p>Price: $150 per night</p>
+          <div class="bed-choice" id="bedDiv2">
+            <label for="bedChoice2">Bed Choice:</label>
+            <select id="bedChoice2" name="bedChoice2">
+              <option value="single">Single Bed</option>
+              <option value="double">Double Bed</option>
+              <option value="king">King Bed</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="selbtn" id="btn2" onclick="selectRoom('room2', 'btn2', 'bedDiv2', 'Deluxe Room')">Select Room</button>
+
+      <!-- Suite -->
+      <div class="room" id="room3">
+        <img src="image/room3.jpg" alt="Suite">
+        <div>
+          <h2>Suite</h2>
+          <p>Spacious suite with a living area, kitchenette, and a private balcony.</p>
+          <p>Price: $200 per night</p>
+          <div class="bed-choice" id="bedDiv3">
+            <label for="bedChoice3">Bed Choice:</label>
+            <select id="bedChoice3" name="bedChoice3">
+              <option value="single">Single Bed</option>
+              <option value="double">Double Bed</option>
+              <option value="king">King Bed</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="selbtn" id="btn3" onclick="selectRoom('room3', 'btn3', 'bedDiv3', 'Suite')">Select Room</button>
+
+      <button type="submit" class="bookk">Book Now</button>
+
+    </form>
+  </div>
+
+  <a href="main.html" class="back-home">← Back to Home</a>
+
+  <script>
+    function selectRoom(roomId, btnId, bedDivId, roomName) {
+      // Remove selected state from all rooms
+      ['room1', 'room2', 'room3'].forEach(id => {
+        document.getElementById(id).classList.remove('selected');
+      });
+      ['btn1', 'btn2', 'btn3'].forEach(id => {
+        document.getElementById(id).classList.remove('active');
+        document.getElementById(id).textContent = 'Select Room';
+      });
+      ['bedDiv1', 'bedDiv2', 'bedDiv3'].forEach(id => {
+        document.getElementById(id).classList.remove('visible');
+      });
+
+      // Apply selected state to chosen room
+      document.getElementById(roomId).classList.add('selected');
+      document.getElementById(btnId).classList.add('active');
+      document.getElementById(btnId).textContent = '✓ Selected';
+      document.getElementById(bedDivId).classList.add('visible');
+
+      // Save selected room name to hidden input
+      document.getElementById('selectedRoom').value = roomName;
+    }
+
+    function handleBooking(event) {
+      event.preventDefault();
+
+      const selectedRoom = document.getElementById('selectedRoom').value;
+      if (!selectedRoom) {
+        alert('Please select a room before booking.');
+        return;
+      }
+
+      const name = document.getElementById('name').value;
+      const checkIn = document.getElementById('check-in').value;
+      const checkOut = document.getElementById('check-out').value;
+
+      alert(`Booking confirmed!\n\nName: ${name}\nRoom: ${selectedRoom}\nCheck-in: ${checkIn}\nCheck-out: ${checkOut}\n\nThank you for choosing Kuriftu Resort!`);
+    }
+  </script>
+
+</body>
+</html>
