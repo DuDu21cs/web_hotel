@@ -1,45 +1,146 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Reservation</title>
-   <link rel="stylesheet" href="css.css">
+  <title>Kuriftu Resort - Restaurant Reservation</title>
+  <link rel="stylesheet" href="css.css">
+  <script src="script.js"></script>
 </head>
 <body>
 
-  <div id="header">
-    <h1>Restaurant Reservation</h1>
+<header>
+  <div class="content">
+    <div class="logo">
+      <img src="image/logo.webp" alt="Kuriftu Logo">
+    </div>
+    <div class="links">
+      <ul id="menulist">
+        <li><a href="main.html">Home</a></li>
+        <li><a href="Dining.html">Dining</a></li>
+        <li><a href="room.html">Rooms</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><button class="primary-btn" onclick="goToForm()">BOOK NOW</button></li>
+      </ul>
+      <span class="fa fa-bars"></span>
+    </div>
+  </div>
+</header>
+
+<div id="header">
+  <h1>Restaurant Reservation</h1>
+</div>
+
+<div id="reservation-form">
+  <form onsubmit="handleReservation(event)">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="date">Reservation Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Reservation Time:</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="guests">Number of Guests:</label>
+    <select id="guests" name="guests" required>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8+</option>
+    </select>
+
+    <input type="submit" value="Submit Reservation">
+
+  </form>
+</div>
+
+<footer class="footer">
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p>Kuriftu Resort Bishoftu, Ethiopia</p>
+    <p><span style="color: palevioletred;">Email: info@example.com</span></p>
+    <p>Phone: +251 911091185</p>
   </div>
 
-  <div id="reservation-form">
-    <form action="reservation_process.php" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" required>
-
-      <label for="date">Reservation Date:</label>
-      <input type="date" id="date" name="date" required>
-
-      <label for="time">Reservation Time:</label>
-      <input type="time" id="time" name="time" required>
-
-      <label for="guests">Number of Guests:</label>
-      <select id="guests" name="guests" required>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <!-- Add more options as needed -->
-      </select>
-
-      <input type="submit" value="Submit Reservation">
-    </form>
+  <div class="footer-section">
+    <p>
+      <span style="color: darkkhaki;">Banquet &amp; Sales</span><br>
+      0116687972<br>
+      <span style="color: darkkhaki;">Central Reservation</span><br>
+      +251 911091185<br>
+      +251 116623605/04<br>
+    </p>
   </div>
+
+  <div class="footer-section">
+    <p>
+      <span style="color: darkkhaki;">Kuriftu Resort &amp; Spa Entoto</span><br>
+      +251 905061020<br>
+      +251 905053151/52<br>
+    </p>
+  </div>
+
+  <div class="footer-section">
+    <p>
+      <span style="color: darkkhaki;">Kuriftu Resort &amp; Spa Bishoftu</span><br>
+      +251 924949494<br>
+      <span style="color: darkkhaki;">Kuriftu Resort &amp; Spa Lake Tana</span><br>
+      +251 920959797<br>
+    </p>
+  </div>
+
+  <div class="footer-section">
+    <p>
+      <span style="color: darkkhaki;">Kuriftu Resort &amp; Spa Awash Falls</span><br>
+      +251 944448800<br>
+      <span style="color: darkkhaki;">Boston Day Spa</span><br>
+      +251 116636557<br>
+      +251 116623808<br>
+    </p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Follow Us</h3><br>
+    <a href="#" target="_blank">Facebook</a><br>
+    <a href="#" target="_blank">X</a><br>
+    <a href="#" target="_blank">Instagram</a><br>
+    <a href="#" target="_blank">TikTok</a><br>
+    <a href="#" target="_blank">YouTube</a><br>
+    <a href="#" target="_blank">Telegram</a><br>
+  </div>
+</footer>
+
+<div class="copyright">
+  <p>&copy; 2023 Kuriftu. All rights reserved.</p>
+</div>
+
+<script>
+  function handleReservation(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const guests = document.getElementById('guests').value;
+
+    alert(`Reservation confirmed!\n\nName: ${name}\nDate: ${date}\nTime: ${time}\nGuests: ${guests}\n\nThank you for choosing Kuriftu Resort!`);
+
+    event.target.reset();
+  }
+</script>
 
 </body>
 </html>
